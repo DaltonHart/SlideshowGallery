@@ -1,0 +1,66 @@
+:root {
+  --background-blur: url("https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1f1f1f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.art {
+  width: 80vw;
+  max-width: 900px;
+  position: relative;
+  z-index: 2;
+  margin-top: 100px;
+}
+
+.art__image {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.art::after {
+  content: "";
+  height: 120%;
+  width: 120%;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  background-image: var(--background-blur);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(60px);
+  opacity: 0.8;
+}
+
+.button-group {
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+button {
+  padding: 10px;
+}
